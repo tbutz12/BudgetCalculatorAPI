@@ -1,0 +1,47 @@
+<h1 id = "date">Budget Homepage!</h1>
+<br>
+<a href='{{url_for("logout")}}'>Click here to log out!</a>
+<br>
+<script>
+	var d = new Date();
+	var n = d.getMonth();
+	var months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+	document.getElementById("date").innerHTML ="Budget for " + months[n];
+</script>
+		<div id="Month">
+		</div>
+		<h2>Categories: </h2>
+		<table id="theTable">
+		</table>
+		<h2>Uncategorized Purchases: </h2>
+		<table id="uncategorized">
+		</table>
+		<br>
+		<h3> Add new Category: </h3>
+		<form name="theForm">
+			Category Name:<input type="text" id="newCat" value="" />
+			<br>
+			Budget Amount:<input type="text" id="catAmount" value="" />
+			<br>
+			<input type="button" id="categoryButton" value="Submit" />
+        </form>
+        <br>
+        <br>
+        <h3> Add new Purchase: </h3>
+		<form name="PurchaseForm">
+			Purchase Name:<input type="text" id="newPurchase" value=""/>
+			<br>
+			Category:<input type="text" id="purchaseCat" value="" />
+			<br>
+			Amount:<input type = "text" id ="purchaseAmount" value=""/>
+			<br>
+			Date:<input type = "text" id ="purchaseDate" value="" placeholder = "format of 00/00/0000 00:00"/>
+			<br>
+			<input type="button" id="purchaseButton" value="Submit" />
+			<br>
+			
+		</form>
+{% extends "base.html" %}
+{% block title %}Homepage! - {{ super() }}{% endblock %}
+{% block body %}
+{% endblock %}

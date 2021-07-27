@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"defer ></script>
+	</head>
+	<body style="font-size:22px">
+		{% if username %}
+			Logged in as {{ username }}, <a href="{{ url_for("logout") }}" style="font-size:22px">click here to logout</a>
+			<br />
+			<br />
+		{% else %}
+		{% endif %}
+		{% block body %}
+		{% endblock %}
+		<br>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Register! - {{ super() }}{% endblock %}
+
+{% block body %}
+{% if flag1 %}
+<script>
+	alert("This name already exists!");
+</script>
+{% endif %}
+{% if flag2 %}
+<script>
+	alert("Username cannot have a length of 0!");
+</script>
+{% endif %}
+{% if flag3 %}
+<script>
+	alert("Password cannot have a length of 0!");
+</script>
+{% endif %}
+<h2>Registration Page!</h2><br>
+		<form action="" method="post">
+			Username:  <input type="text" name="user" />
+			<br />
+			Password:  <input type="text" name="pass" />
+			<br />
+			<br>
+			<input type="submit" value="submit" />
+		</form>
+		<br>
+		<a href='{{url_for("login")}}'>Click here to return to return to login!</a>
+{% endblock %}

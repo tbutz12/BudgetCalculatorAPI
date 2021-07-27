@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Log in! - {{ super() }}{% endblock %}
+
+{% block body %}
+<h1>Event User Login!</h1>
+{% if flag %}
+<script>
+	alert("Incorrect Login!");
+</script>
+{% endif %}
+		<form action="" method="post">
+			<br>
+			<br>
+			Username:  <input type="text" name="user" />
+			<br />
+			Password:  <input type="text" name="pass" />
+			<br />
+			<br>
+			<input type="submit" value="submit" style="font-size:22px" />
+			<div id='noAcc'>
+				<small style="font-size:22px">
+					<br >
+					Don't have an account? <a href='{{url_for("registration")}}' style="font-size:22px">Click here to sign up!</a>
+				</small>
+			</div>
+		</form>
+		<form action="" method="post">
+		<small style="font-size:22px">
+			<br>
+			Want to go to the homepage? <a href='{{url_for("homepage", username="asdf")}}' style="font-size:22px">Click here!</a>
+		</small>
+	</form>
+{% endblock %}
